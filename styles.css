@@ -96,19 +96,25 @@ body {
   font-family: "Overpass", sans-serif;
   font-size: var(--base-fs);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--deep-dark-blue);
-  color: var(--white);
+  color: var(--light-grey);
 }
 
-.rating {
+/* Rating state */
+
+.rating-state,
+.thank-you-state {
   width: 90%;
   max-width: 400px;
   background-color: var(--dark-blue);
   border-radius: 1em;
   padding: var(--sizer-1) var(--sizer-2);
   padding-bottom: var(--sizer-3);
+
+  margin-bottom: 2rem;
 }
 
 .rating-icon-container {
@@ -131,6 +137,7 @@ body {
   font-weight: 700;
   padding: var(--sizer-1) 0;
   letter-spacing: 2px;
+  color: white;
 }
 
 .rating-rates {
@@ -144,7 +151,6 @@ body {
   width: 40px;
   height: 40px;
   padding: 1rem;
-  color: var(--light-grey);
   background-color: var(--light-blu-clr);
   border-radius: 50%;
   font-weight: 700;
@@ -157,8 +163,8 @@ body {
 }
 
 .rating-rate:hover {
-  background-color: var(--white);
-  color: var(--primary-orange);
+  background-color: var(--primary-orange);
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -181,8 +187,52 @@ body {
   color: var(--primary-orange);
 }
 
+/* Thank you state */
+
+.thank-you-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thank-you-state img {
+  margin: var(--sizer-3) 0;
+}
+
+.thank-you-state .rating-state {
+  width: auto;
+  background-color: var(--light-blu-clr);
+  padding: 0.5rem 0.8rem;
+  border-radius: 99px;
+  color: var(--primary-orange);
+  margin: 0;
+}
+
+.thank-you-state p {
+  text-align: center;
+}
+
+.thank-you-state h2 {
+  color: var(--white);
+  margin: 1rem 0;
+  font-size: var(--fs-mobile);
+  letter-spacing: 2px;
+}
+
+/* Attribution default classes */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 @media screen and (min-width: 375px) {
-  .heading {
+  .heading,
+  .thank-you-state h2 {
     font-size: var(--fs-desktop);
   }
 }
