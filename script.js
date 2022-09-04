@@ -7,10 +7,13 @@ const ratingRates = document.querySelectorAll('.rating-rate')
 const ratingIconContainer = document.querySelector('.rating-icon-container')
 const RATING_ICON = `<img src="./images/icon-star.svg" alt="" class="rating-icon" />`
 
+let rated = false;
+
 
 ratingRate.addEventListener('click', e => {
     if (e.target.matches('.rating-rates')) return
 
+    rated = true;
     const ratingNumber = e.target.innerText
     ratingNumberGiven.innerText = ratingNumber;
 
@@ -24,6 +27,11 @@ ratingRate.addEventListener('click', e => {
 })
 
 submitBtn.addEventListener('click', () => {
+
+    if (!rated) {
+        alert('Before Submit Rate Please!')
+        return
+    }
     ratingState.classList.add('hidden')
     thankYouState.classList.remove('hidden')
 })
